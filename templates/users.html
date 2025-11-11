@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h4 class="mb-0">Users</h4>
+  <a class="btn btn-outline-light" href="{{ url_for('add_user') }}">Register</a>
+</div>
+
+<div class="row g-3">
+  {% for user in users %}
+  <div class="col-md-6">
+    <div class="card dark-card p-3">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h6 class="mb-0">{{ user.name }}</h6>
+          <small class="text-muted">ID: {{ user.id }}</small>
+        </div>
+        <div><span class="badge pill">Borrowed: {{ user.borrow_records|length }}</span></div>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <p>No users yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}

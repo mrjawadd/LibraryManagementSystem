@@ -1,0 +1,72 @@
+:root{
+    --bg:#0b0f13;
+    --card:#0f1720;
+    --muted:#9aa5b1;
+    --accent:#7c5cff; /* purple neon */
+    --accent-2:#2ad0ff; /* cyan */
+    --glass: rgba(255,255,255,0.03);
+    --pill-bg: rgba(255,255,255,0.03);
+  }
+  
+  body{
+    background: linear-gradient(180deg, #06080a 0%, #091018 100%);
+    color: #dbe7ef;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  
+  .nav-glow {
+    background: linear-gradient(90deg, rgba(12,17,23,0.95), rgba(10,14,20,0.95));
+    box-shadow: 0 6px 30px rgba(12,15,30,0.6);
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+  
+  .logo-dot {
+    width:10px; height:10px; border-radius:50%;
+    background: linear-gradient(45deg, var(--accent), var(--accent-2));
+    box-shadow: 0 6px 18px rgba(124,92,255,0.18);
+    display:inline-block;
+  }
+  
+  .accent{ color: var(--accent); font-weight:700; }
+  
+  .dark-card {
+    background: linear-gradient(180deg, rgba(20,24,30,0.6), rgba(12,16,20,0.5));
+    border: 1px solid rgba(255,255,255,0.03);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(2,6,12,0.6);
+  }
+  
+  .form-control-dark, .form-select-dark {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.03);
+    color: #dbe7ef;
+  }
+  
+  .form-control-dark::placeholder { color: #7f8991; }
+  
+  .btn-neon{
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    border: none;
+    color: white;
+    box-shadow: 0 8px 30px rgba(44, 154, 255, 0.08), 0 2px 8px rgba(124,92,255,0.12);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  
+  .btn-neon:hover{ transform: translateY(-2px); box-shadow: 0 12px 40px rgba(44,154,255,0.12); }
+  
+  .muted { color: var(--muted); }
+  .small { font-size: 0.9rem; }
+  
+  .stat { padding: 18px 10px; border-radius:10px; }
+  .stat-num { font-size: 1.6rem; font-weight:700; color: white; }
+  
+  .pill { background: rgba(255,255,255,0.04); color: white; padding: 6px 10px; border-radius: 999px; }
+  
+  .list-group-item.dark-list { background: transparent; border-bottom: 1px solid rgba(255,255,255,0.02); }
+  
+  .row-hover:hover { background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02)); }
+  
+  .footer { border-top: 1px solid rgba(255,255,255,0.02); color: #98a6b2; background: transparent; }
+  

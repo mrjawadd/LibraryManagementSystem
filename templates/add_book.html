@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card dark-card p-4">
+  <h4>Add New Book</h4>
+  <form method="post" class="mt-3">
+    <div class="mb-3">
+      <label class="form-label small text-muted">Title</label>
+      <input name="title" class="form-control form-control-dark" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label small text-muted">Author</label>
+      <input name="author" class="form-control form-control-dark" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label small text-muted">Quantity</label>
+      <input name="quantity" type="number" min="1" class="form-control form-control-dark" value="1">
+    </div>
+    <button class="btn btn-neon">Save Book</button>
+  </form>
+</div>
+{% endblock %}

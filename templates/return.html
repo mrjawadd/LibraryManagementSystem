@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card dark-card p-4">
+  <h4>Return Book</h4>
+
+  <div class="mb-3">
+    <label class="form-label small text-muted">Select User</label>
+    <select id="userSelect" class="form-select form-select-dark">
+      <option value="">Select user</option>
+      {% for u in users %}
+      <option value="{{ u.id }}">{{ u.name }} (ID: {{ u.id }})</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <form id="returnForm" method="post" style="display:none;">
+    <input type="hidden" name="user_id" id="user_id">
+    <div class="mb-3">
+      <label class="form-label small text-muted">Borrowed Book</label>
+      <select name="book_id" id="bookSelect" class="form-select form-select-dark" required></select>
+    </div>
+    <button class="btn btn-neon">Return</button>
+  </form>
+</div>
+
+<script>
+document.getElementById('userSelect').addEventListener('change', async function () {
+  const userId = this.value;
+  const form = document.getElementById('returnForm');
+  const bookSelect = document.getElementById('bookSelect');
+  if (!userId) {
+    form.style.display = 'none';
+    return;
+  }
+  const resp = await fetch(`/user/${userId}/borrowed`);
+  const data = await resp.json();
+  bookSelect.innerHTML = '';
+  if (data.borrowed.length === 0) {
+    bookSelect.innerHTML = '<option value="">No borrowed books</option>';
+  } else {
+    for (const b of data.borrowed) {
+      const opt = document.createElement('option');
+      opt.value = b.book_id;
+      opt.text = b.title;
+      bookSelect.appendChild(opt);
+    }
+  }
+  document.getElementById('user_id').value = userId;
+  form.style.display = 'block';
+});
+</script>
+{% endblock %}

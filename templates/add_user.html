@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card dark-card p-4">
+  <h4>Register User</h4>
+  <form method="post" class="mt-3">
+    <div class="mb-3">
+      <label class="form-label small text-muted">Name</label>
+      <input name="name" class="form-control form-control-dark" required>
+    </div>
+    <button class="btn btn-neon">Register</button>
+  </form>
+</div>
+{% endblock %}
